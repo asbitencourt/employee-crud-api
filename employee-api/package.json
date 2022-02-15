@@ -1,0 +1,49 @@
+{
+  "name": "employee-crud-api",
+  "version": "1.0.0",
+  "description": "API em NodeJS que será consumida por 4 frameworks diferentes",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint --ext .js -f ./node_modules/eslint-friendly-formatter . --fix",
+    "prepush": "npm run lint",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asbitencourt/employee-crud-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "crud",
+    "azure-functions",
+    "express",
+    "github-actions",
+    "swa",
+    "serverless",
+    "azure",
+    "postgresql",
+    "sql",
+    "javascript"
+  ],
+  "author": "André da Silva Bitencourt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asbitencourt/employee-crud-api/issues"
+  },
+  "homepage": "https://github.com/asbitencourt/employee-crud-api#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "pg": "^8.7.3"
+  }
+}

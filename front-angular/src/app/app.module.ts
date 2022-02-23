@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,18 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 // for Core import:
 import { LoadingBarModule } from '@ngx-loading-bar/core';
+
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import ptBr from '@angular/common/locales/br';
+import { registerLocaleData } from '@angular/common';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
+registerLocaleData(ptBr, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -33,9 +45,19 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
     LoadingBarRouterModule,
 
     // for Core use:
-    LoadingBarModule
+    LoadingBarModule,
+
+    ReactiveFormsModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

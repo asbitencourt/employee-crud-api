@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@fortawesome/angular-fontawesome": "^0.10.1",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@ngx-loading-bar/core": "^6.0.2",
     "@ngx-loading-bar/http-client": "^6.0.2",
     "@ngx-loading-bar/router": "^6.0.2",

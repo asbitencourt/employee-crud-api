@@ -6,6 +6,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
+import Swal from 'sweetalert2'
 // eslint-disable-next-line no-unused-vars
 import produce from "immer";
 
@@ -61,16 +62,52 @@ export default function FormDialog(props) {
   };
 
   const handleDeleteGame = () => {
+    Swal.fire({
+      title: 'Are you sure you want to delete the employee?',
+      text: 'Watch out! This Employee will be deleted!',
+      icon: 'warning',
+      showConfirmButton: true,
+      allowOutsideClick: false,
+      allowEnterKey: true,
+      allowEscapeKey: false,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes! Please, delete it!'
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.cancel) { // ==> Detectar se a pergunta acima foi recusada
+        Swal.fire({
+          title: 'Cancel!',
+          text: 'Returning to the Employees List',
+          icon: 'error',
+          showConfirmButton: true,
+          allowOutsideClick: false,
+          allowEnterKey: true,
+          allowEscapeKey: false,
+        });
+      } else { 
     Axios.delete(`http://localhost:3001/api/employees/${editValues.employee_id}`).then(() => {
-      props.setListCard(
+      Swal.fire({
+        title: 'Deleted it!',
+        text: 'Employee was deleted it!',
+        icon: 'success',
+        showConfirmButton: true,
+        allowOutsideClick: false,
+        allowEnterKey: true,
+        allowEscapeKey: false,
+      });
+        props.setListCard(
         props.listCard.filter((value) => {
           // eslint-disable-next-line eqeqeq
           return value.employee_id != editValues.employee_id;
         })
+      
       );
     });
+  }
+});
     handleClose();
-  };
+};
 
   return (
     <div>

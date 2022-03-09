@@ -98,7 +98,7 @@
                                      WHERE employee_id = $6`,
        [name, job_role, salary, birth, employee_registration, id]
      );
-     res.status(200).send({ message: "Employee Updated Successfully!" });
+     res.status(200).send(job_role);
    } catch (error) {
      console.error('updateEmployeeById', error);
      res.status(500).send({

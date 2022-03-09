@@ -26,7 +26,7 @@ export class EmployeeAddComponent implements OnInit {
  
 
   form: FormGroup = this.formBuilder.group({
-    name: ['', Validators.required],
+    name: ['',Validators.compose([Validators.required,Validators.minLength(3)])],
     job_role: ['', Validators.required],
     salary: ['', Validators.required],
     birth: ['', Validators.required],

@@ -7,6 +7,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Axios from "axios";
 import Swal from 'sweetalert2'
+import 'bootstrap/dist/css/bootstrap.css';
 // eslint-disable-next-line no-unused-vars
 import produce from "immer";
 
@@ -62,6 +63,7 @@ export default function FormDialog(props) {
   };
 
   const handleDeleteGame = () => {
+    
     Swal.fire({
       title: 'Are you sure you want to delete the employee?',
       text: 'Watch out! This Employee will be deleted!',
@@ -96,6 +98,7 @@ export default function FormDialog(props) {
         allowEnterKey: true,
         allowEscapeKey: false,
       });
+      window.location.reload(false);
         props.setListCard(
         props.listCard.filter((value) => {
           // eslint-disable-next-line eqeqeq
@@ -103,10 +106,15 @@ export default function FormDialog(props) {
         })
       
       );
+    
     });
+   
+    
   }
+ 
 });
-    handleClose();
+
+handleClose();
 };
 
   return (
@@ -118,6 +126,7 @@ export default function FormDialog(props) {
       >
         <DialogTitle id="form-dialog-title">Editar</DialogTitle>
         <DialogContent>
+        <div className="form-control">
           <TextField
             disabled
             margin="dense"
@@ -127,6 +136,7 @@ export default function FormDialog(props) {
             type="text"
             fullWidth
           />
+          </div>
           <TextField
             autoFocus
             margin="dense"
@@ -180,7 +190,7 @@ export default function FormDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
-            Cancel
+            Cancelar
           </Button>
           <Button color="primary" onClick={() => handleDeleteGame()}>
             Excluir

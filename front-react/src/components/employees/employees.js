@@ -3,9 +3,12 @@ import "./employees.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import FormDialog from "../dialog/dialog";
 
+
+
 export default function Employee(props) {
   const [open, setOpen] = React.useState(false);
 
+ 
   return (
     <>
       <FormDialog
@@ -20,18 +23,13 @@ export default function Employee(props) {
         setListCard={props.setListCard}
         employee_id={props.employee_id}
       />
-      <div className="container" onClick={() => setOpen(true)}>
-      <div className="card">
-      <div className="card-body">
-        <h5 className="card-header">{props.name}</h5>
-        <p className="card-text">{props.employee_id}</p>
-        <p className="card-text">{props.job_role}</p>
-        <p className="card-cost">R${props.salary}</p>
-        <p className="card-text">{props.birth}</p>
-        <p className="card-text">{props.employee_registration}</p>
-        </div>
-        </div>
-      </div>
+     
+    
+               <tr key={props.employee_id} onClick={() => setOpen(true)}>
+                <td>{props.employee_id}</td>
+                <td>{props.name}</td>
+                <td>{props.job_role}</td>
+              </tr> 
     </>
   );
 }

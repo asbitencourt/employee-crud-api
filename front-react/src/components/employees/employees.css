@@ -31,3 +31,8 @@
   .card-container:hover {
     background-color: aqua;
   }
+
+  .error_form{
+    
+    color:red;
+  }

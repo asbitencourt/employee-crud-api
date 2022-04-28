@@ -20,9 +20,6 @@
           <li class="nav-item">
             <Link class="nav-link" to="create">Create</Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="sobre">Sobre</Link>
-          </li>
          
         </ul>
       </div>

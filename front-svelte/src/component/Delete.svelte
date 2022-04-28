@@ -58,10 +58,10 @@ import { Link } from 'svelte-navigator';
     <h2>Deseja excluir o Employee <strong>{$params.id}</strong>?</h2>
     <br />
     <div class="btn-group">
-        <Link to="/" class="btn btn-primary">
+        <Link to="/" class="btn btn-outline-primary">
             <i class="fa fa-arrow-left"></i> Cancelar
         </Link>
-        <button on:click={handleRemoveEmployee} class="btn btn-danger">
+        <button on:click={handleRemoveEmployee} class="btn btn-outline-danger">
             Excluir <i class="fa fa-trash"></i>
         </button>
     </div>

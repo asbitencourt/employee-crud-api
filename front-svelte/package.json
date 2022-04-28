@@ -16,13 +16,18 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.0.0",
+    "svelte-fa": "^2.4.0",
     "svelte-yup": "^1.0.5"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
     "datatables.net": "^1.11.5",
     "datatables.net-dt": "^1.11.5",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "sirv-cli": "^2.0.0",
     "svelte-forms": "^2.3.1",

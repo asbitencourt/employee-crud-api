@@ -9,6 +9,7 @@
 	import About from './About.svelte';
 	import Delete from './component/Delete.svelte';
 	import Update from './component/Editar.svelte';
+	import Detais from './component/Details.svelte';
 	
 
   </script>
@@ -16,7 +17,6 @@
   
   <Router>
 	<Header />
-	<body>
 	<main>
 	
 	  <Route path="/">
@@ -26,9 +26,9 @@
 	  <Route path="sobre" component={About} />
 	  <Route path="delete/:id" component={Delete} />
 	  <Route path="edit/:id" component={Update} />
+	  <Route path="details/:id" component={Detais} />
 		
 	</main>
-	</body>
 	<Footer />
   </Router>
   

@@ -5,6 +5,8 @@
     import axios from 'axios';
     import { useParams } from 'svelte-navigator';
 
+    
+
 
  const  params  = useParams();
 
@@ -14,11 +16,11 @@
           employee_id: yup.string().required().label("Employee ID"),
           name: yup.string().required().max(30).label("Name"),
           job_role: yup.string().required().max(50).label("Job Role"),
-          salary: yup.string().required().label("Salary"),
+          salary: yup.string().required().nullable().label("Salary"),
           birth: yup.string().required().label("Birth"),
-          employee_registration: yup.string().required().label("Employee Registration")
+          employee_registration: yup.string().required().nullable().label("Employee Registration")
       });
-      let fields = { employee_id:"", name: "", job_role:"", salary:0, birth:"",employee_registration:0};
+      let fields = { employee_id:"", name: "", job_role:"", salary:"", birth:"",employee_registration:""};
       let submitted = false;
       let isValid;
 
@@ -65,6 +67,7 @@
   
   <section>
     <div class="container">
+      <hr />
       <div class="card">
   <div class="card-header">
   <h3>Update Employee</h3>
@@ -73,8 +76,8 @@
   <!-- svelte-ignore component-name-lowercase -->
   <Form {schema} {fields} submitHandler={formSubmit} {submitted}>
     <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" name="employee_id" id="employee_id" bind:value={fields.employee_id} placeholder="ID"/>  
+        <label for="name">ID</label>
+        <input type="text" class="form-control" name="employee_id" id="employee_id" disabled bind:value={fields.employee_id} placeholder="ID"/>  
          <Message name="employee_id" />
         </div>
   <div class="form-group">

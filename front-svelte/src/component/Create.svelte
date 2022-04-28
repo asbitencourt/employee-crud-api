@@ -76,7 +76,7 @@
 <input type="number" class="form-control" name="employee_registration" bind:value={fields.employee_registration} placeholder="Employee Registratio" id="employee_registration" />
 <Message name="employee_registration"  />                
 </div>
-<button type="submit" class="btn btn-primary">Salvar <i class="fa fa-save"></i></button>
+<button type="submit" class="btn btn-outline-primary">Salvar <i class="fa fa-save"></i></button>
 </Form>
 </div>
 </div>

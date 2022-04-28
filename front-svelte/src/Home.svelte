@@ -5,7 +5,7 @@
   import 'bootstrap/dist/css/bootstrap.min.css';
   import { Datatable } from 'svelte-simple-datatables'
   import { Link } from 'svelte-navigator';
-
+  import 'font-awesome/css/font-awesome.min.css';
  
 
   
@@ -52,14 +52,14 @@
               <td>{row.salary}</td>
               <td>
                   <div class="btn-group">
-                      <Link to={`/edit/${row.employee_id}`} class="btn btn-primary">
-                          <i class="fa fa-edit">Edit</i>
+                      <Link to={`/edit/${row.employee_id}`} class="btn btn-outline-primary">
+                          <i class="fa fa-edit"> Edit</i>
                       </Link>
-                      <Link to={`/details/${row.employee_id}`} class="btn btn-secondary">
-                          <i class="fa fa-eye">Details</i>
+                      <Link to={`/details/${row.employee_id}`} class="btn btn-outline-info">
+                          <i class="fa fa-eye"> Details</i>
                       </Link>
-                      <Link to={`/delete/${row.employee_id}`} class="btn btn-danger">
-                          <i class="fa fa-trash">Delete</i>
+                      <Link to={`/delete/${row.employee_id}`} class="btn btn-outline-danger">
+                        <i class="fa fa-trash" aria-hidden="true"> Delete</i>
                       </Link>
                   </div>
               </td>
